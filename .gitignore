@@ -7,7 +7,9 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+.DS_Store
 .Python
+.vscode/
 build/
 develop-eggs/
 dist/
@@ -50,6 +52,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+.pylintrc
 
 # Translations
 *.mo
