@@ -21,8 +21,8 @@ class PermuteRandom(InvertibleModule):
         """
         super().__init__(dims_in, dims_c)
 
-        self.channels = dims_in[0]
-        self.input_rank = len(dims_in) - 1
+        self.channels = self.dims_in[0]
+        self.input_rank = len(self.dims_in) - 1
 
         self.permute_function = lambda x, w: tf.linalg.matvec(w, x, transpose_a=True)
 
@@ -52,12 +52,9 @@ class PermuteRandom(InvertibleModule):
     def call(self, x, rev=False, jac=True):  # pylint: disable=W0221
         if not rev:
             y = self.permute_function(x, self.w_perm)
-            if jac:
-                return y, 0.0
+        else:
+            y = self.permute_function(x, self.w_perm_inv)
 
-            return y
-
-        y = self.permute_function(x, self.w_perm_inv)
         if jac:
             return y, 0.0
 
