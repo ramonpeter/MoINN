@@ -1,7 +1,6 @@
 """Base Invertible Module Class"""
 
 from typing import Tuple, Iterable
-
 import tensorflow as tf
 
 

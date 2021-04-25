@@ -1,3 +1,2 @@
+"""Modules for Invertible Neural Networks"""
 from . import modules
-
-__all__ = ["modules"]
