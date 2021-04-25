@@ -4,7 +4,7 @@ from typing import Union
 import numpy as np
 import tensorflow as tf
 
-from moinn.modules.base import InvertibleModule
+from MoINN.modules.base import InvertibleModule
 
 
 # pylint: disable=C0103

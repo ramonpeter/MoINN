@@ -2,7 +2,7 @@
 
 from typing import Dict, Callable, Union
 import tensorflow as tf
-from moinn.modules.base import InvertibleModule
+from MoINN.modules.base import InvertibleModule
 
 
 # pylint: disable=C0103, R1729, E1120, E1124, W0221
@@ -92,7 +92,7 @@ class _BaseCouplingBlock(InvertibleModule):
         # *_c: variable with condition concatenated
         # j1, j2: Jacobians of the two coupling operations
 
-        x1, x2 = tf.split(x[0], [self.split_len1, self.split_len2], axis=-1)
+        x1, x2 = tf.split(x, [self.split_len1, self.split_len2], axis=-1)
 
         if not rev:
             x2_c = tf.concat([x2, *c], -1) if self.conditional else x2
@@ -138,12 +138,6 @@ class _BaseCouplingBlock(InvertibleModule):
             If the Jacobian is zero of fixed, may also return float.
         """
         raise NotImplementedError()
-
-    def compute_output_shape(self, input_shape):
-        """See base class for docstring"""
-        if len(input_shape) != 1:
-            raise ValueError("Can only use 1 input")
-        return input_shape
 
     def get_config(self):
         config = {"clamp": self.clamp, "clamp_activation": self.f_clamp}
@@ -501,7 +495,7 @@ class AffineCouplingOneSided(_BaseCouplingBlock):
         pass
 
     def call(self, x, c=None, rev=False, jac=True):
-        x1, x2 = tf.split(x[0], [self.split_len1, self.split_len2], axis=-1)
+        x1, x2 = tf.split(x, [self.split_len1, self.split_len2], axis=-1)
         x1_c = tf.concat([x1, *c], -1) if self.conditional else x1
 
         # notation:
@@ -595,8 +589,8 @@ class ConditionalAffineTransform(_BaseCouplingBlock):
         j = tf.reduce_sum(s, axis=self.sum_dims)
 
         if rev:
-            y = (x[0] - t) * tf.math.exp(-s)
+            y = (x - t) * tf.math.exp(-s)
             return y, -j
 
-        y = tf.math.exp(s) * x[0] + t
+        y = tf.math.exp(s) * x + t
         return y, j
