@@ -48,7 +48,7 @@ Download + Install
 .. code:: sh
 
    # clone the repository
-   git clone https://github.com/itp-mlhep/EventGAN.git
+   git clone https://github.com/ramonpeter/MoINN.git
    # then run the main file with the param_card
    cd EventGAN
    python setup.py develop
