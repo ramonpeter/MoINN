@@ -57,7 +57,7 @@ For development:
    # clone the repository
    git clone https://github.com/ramonpeter/MoINN.git
    # then install in dev mode
-   cd EventGAN
+   cd MoINN
    python setup.py develop
 
 
