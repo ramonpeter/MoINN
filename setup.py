@@ -19,5 +19,6 @@ setup(
     url=HTTPS_GITHUB_URL,
 
     # dependencies
-    packages=['MoINN'],
+    packages=find_packages(),
+    install_requires=['numpy>=1.15.0','scipy>=1.5', 'tensorflow>=2.1.0'],
 )
