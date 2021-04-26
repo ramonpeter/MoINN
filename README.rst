@@ -23,6 +23,37 @@ Currently implemented coupling blocks are:
 - SPADE [5]_
 - All in one Black (FrEIA)
 
+Installation
+-------------
+
+Dependencies
+~~~~~~~~~~~~
+
++---------------------------+-------------------------------+
+| **Package**               | **Version**                   |
++---------------------------+-------------------------------+
+| Python                    | 3.6 - 3.8                     |
++---------------------------+-------------------------------+
+| Tensorflow                | >= 2.1.0                      |
++---------------------------+-------------------------------+
+| Numpy                     | >= 1.15.0                     |
++---------------------------+-------------------------------+
+| Scipy                     | >= 1.5                        |
++---------------------------+-------------------------------+
+
+Download + Install
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. code:: sh
+
+   # clone the repository
+   git clone https://github.com/itp-mlhep/EventGAN.git
+   # then run the main file with the param_card
+   cd EventGAN
+   python setup.py develop
+
+
 References
 ----------
 
