@@ -20,5 +20,5 @@ setup(
 
     # dependencies
     packages=find_packages(),
-    install_requires=['numpy>=1.15.0','scipy>=1.5', 'tensorflow>=2.1.0'],
+    install_requires=['numpy>=1.15.0', 'scipy>=1.5', 'tensorflow>=2.1.0'],
 )
