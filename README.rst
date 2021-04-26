@@ -1,6 +1,8 @@
 ======
 MoINN
 ======
+.. image:: https://img.shields.io/badge/code%20style-black-000000.svg
+    :target: https://github.com/psf/black
 
 These are the **M**\ odules for **I**\ nvertible **N**\ eural **N**\ etworks (**MoINN**)
 
