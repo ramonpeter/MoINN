@@ -2,6 +2,7 @@
 
 from typing import Dict, Callable, Union
 import tensorflow as tf
+
 from MoINN.modules.base import InvertibleModule
 
 
