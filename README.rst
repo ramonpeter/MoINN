@@ -44,12 +44,19 @@ Dependencies
 Download + Install
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+To just install the modules for usage:
+
+.. code:: sh
+
+   pip install git+https://github.com/ramonpeter/MoINN.git
+   
+For development:
 
 .. code:: sh
 
    # clone the repository
    git clone https://github.com/ramonpeter/MoINN.git
-   # then run the main file with the param_card
+   # then install in dev mode
    cd EventGAN
    python setup.py develop
 
