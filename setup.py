@@ -15,7 +15,7 @@ setup(
     author="Ramon Winterhalder",
     author_email="",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/rst",
     url=HTTPS_GITHUB_URL,
 
     # dependencies
