@@ -1,6 +1,4 @@
-======
-MoINN
-======
+|Logo|
 
 |CI| |Black|
 
@@ -79,3 +77,5 @@ References
 .. [5] Park et al., "Semantic Image Synthesis with Spatially-Adaptive Normalization", `1903.07291 [cs.LG]`_
 .. _`1903.07291 [cs.LG]` : https://arxiv.org/abs/1903.07291).
 
+.. |Logo| image:: docs/moinn_logo.png
+   :alt: MoINN
