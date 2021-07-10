@@ -19,7 +19,7 @@ Currently implemented coupling blocks are:
 - GLOW [3]_
 - GIN [4]_
 - SPADE [5]_
-- All in one Black (FrEIA)
+- All in one Block (FrEIA)
 
 Installation
 -------------
