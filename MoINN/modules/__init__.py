@@ -1,8 +1,8 @@
 # Import the base class first
-from .base import *
+from MoINN.modules.base import *
 
 # Then all inheriting modules
-from .coupling_layers import *
-from .fixed_permutation import *
-from .subnetworks import *
-from .all_in_one_block import *
+from MoINN.modules.coupling_layers import *
+from MoINN.modules.fixed_permutation import *
+from MoINN.modules.subnetworks import *
+from MoINN.modules.all_in_one_block import *

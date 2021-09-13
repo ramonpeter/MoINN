@@ -172,7 +172,7 @@ class AllInOneBlock(InvertibleModule):
                 "Please supply a callable subnet_constructor"
                 "function or object (see docstring)"
             )
-
+        
         self.subnet = subnet_constructor(
             subnet_meta, self.splits[0] + self.condition_length, 2 * self.splits[1]
         )
@@ -213,7 +213,7 @@ class AllInOneBlock(InvertibleModule):
         # the entire coupling coefficient tensor is scaled down by a
         # factor of ten for stability and easier initialization.
         a *= 0.1
-        s, t = tf.split(a, [self.channels, self.channels], -1)
+        s, t = tf.split(a, [self.splits[0], self.splits[1]], -1)
         sub_jac = self.clamp * tf.math.tanh(s)
         if self.GIN:
             sub_jac -= tf.reduce_mean(sub_jac, axis=self.sum_dims, keepdims=True)
@@ -255,7 +255,11 @@ class AllInOneBlock(InvertibleModule):
         # add the global scaling Jacobian to the total.
         # trick to get the total number of non-channel dimensions:
         # number of elements of the first channel of the first batch member
-        n_pixels = tf.size(x) / self.channels
-        log_jac_det += (-1) ** rev * n_pixels * global_scaling_jac
-
+        # Fix n_pixels
+        #n_pixels = tf.size(x) / self.channels
+        log_jac_det += (-1) ** rev  * global_scaling_jac
+        
+        if not jac:
+            return x_out
+        
         return x_out, log_jac_det

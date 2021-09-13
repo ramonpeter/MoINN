@@ -1,2 +1,2 @@
 """Modules for Invertible Neural Networks"""
-from . import modules
+from MoINN import modules
