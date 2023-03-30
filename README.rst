@@ -56,7 +56,7 @@ For development:
    git clone https://github.com/ramonpeter/MoINN.git
    # then install in dev mode
    cd MoINN
-   python setup.py develop
+   pip install --editable .
 
 
 References
